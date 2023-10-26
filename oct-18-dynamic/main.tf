@@ -27,7 +27,7 @@ module "vpc" {
 
 module "subnets" {
   source = "./modules/subnet/"
-  bambam = module.vpc.vpc_id
+  bambam = module.vpc.bambams_vpc_id
   prefix = local.prefix
   subnets = {
     my_first_subnet_using_module = {
