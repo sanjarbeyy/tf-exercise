@@ -13,5 +13,5 @@ jobs:
 
       - name: Run a one-line script
         run: |
-          export AWS_ACCESS_KEY_ID="AKIAY5RPTVUUDXHQ2YHO"
-          echo $AWS_ACCESS_KEY_ID
+          echo my acces key id ${{ secret.MY_AWS_ACCESS_KEY_ID }}
+          echo my secret accces key ${{ secret.MY_AWS_SECRET_ACCESS_KEY }}
