@@ -1,0 +1,17 @@
+name: Run Terraform
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: |
+          export AWS_ACCESS_KEY_ID="AKIAY5RPTVUUDXHQ2YHO"
+          echo $AWS_ACCESS_KEY_ID
