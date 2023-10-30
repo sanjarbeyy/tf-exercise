@@ -3,7 +3,7 @@ terraform {
     organization = "024_2023-summer-cloud"
 
     workspaces {
-      name = "oct-25-lab"
+      name = "oct-31-lab"
     }
   }
   required_providers {
