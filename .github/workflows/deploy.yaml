@@ -19,5 +19,8 @@ jobs:
 
       - name: Run a one-line script
         run: |
-          echo my acces key id ${{ secrets.MY_AWS_ACCESS_KEY_ID }}
-          echo my secret accces key ${{ secrets.MY_AWS_SECRET_ACCESS_KEY }}
+          echo my acces key id ${{ env.MY_AWS_ACCESS_KEY_ID }}
+          echo my secret accces key ${{ env.MY_AWS_SECRET_ACCESS_KEY }}
+          echo my region ${{ env.AWS_REGION }}
+        # echo my acces key id ${{ secrets.MY_AWS_ACCESS_KEY_ID }}
+        # echo my secret accces key ${{ secrets.MY_AWS_SECRET_ACCESS_KEY }}
