@@ -17,6 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       #- uses: hashicorp/setup-terraform@v2
+      - name: Run Terraform Init
+        run: terraform init
+        working-directory: ./oct-31
       - name: Run Terraform Plan
         run: terraform plan
         working-directory: ./oct-31
