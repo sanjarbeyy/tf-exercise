@@ -11,7 +11,7 @@ env:
   AWS_REGION: "us-east-1"
   
 jobs:
-  build:
+  terraform:
     defaults:
       run:
         working-directory: ./oct-31
