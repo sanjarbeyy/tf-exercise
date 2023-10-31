@@ -16,11 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Run a one-line script
-        run: |
-          echo my acces key id ${{ env.AWS_ACCESS_KEY_ID }}
-          echo my secret accces key ${{ env.AWS_ACCESS_KEY_ID }}
-          echo my region ${{ env.AWS_REGION }}
-        # echo my acces key id ${{ secrets.MY_AWS_ACCESS_KEY_ID }}
-        # echo my secret accces key ${{ secrets.MY_AWS_SECRET_ACCESS_KEY }}
+      #- uses: hashicorp/setup-terraform@v2
+      - name: Run Terraform Plan
+        run: terraform plan
