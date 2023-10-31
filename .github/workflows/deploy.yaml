@@ -28,12 +28,12 @@ jobs:
         run: terraform plan
       #  run: terraform plan -var-file myvarfile.tfvars 
         #working-directory: ./oct-31
-      - name: Run Terraform Apply
-        run: terraform apply -auto-approve
+      # - name: Run Terraform Apply
+      #   run: terraform apply -auto-approve
       
       # - name: Time
       #   run: sleep 1000
 
         #working-directory: ./oct-31
-      - name: Run Terraform Destroy
-        run: terraform destroy -auto-approve
+      # - name: Run Terraform Destroy
+      #   run: terraform destroy -auto-approve
