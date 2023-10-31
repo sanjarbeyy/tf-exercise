@@ -19,3 +19,4 @@ jobs:
       #- uses: hashicorp/setup-terraform@v2
       - name: Run Terraform Plan
         run: terraform plan
+        working_directory: ./oct-31
