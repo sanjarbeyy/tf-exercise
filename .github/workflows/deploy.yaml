@@ -24,11 +24,16 @@ jobs:
       - name: Run Terraform Init
         run: terraform init
         #working-directory: ./oct-31
-      - name: Run Terraform Plan
+      - name: Run Terraform Plan - BamBam
         run: terraform plan
+      #  run: terraform plan -var-file myvarfile.tfvars 
         #working-directory: ./oct-31
       - name: Run Terraform Apply
         run: terraform apply -auto-approve
+      
+      # - name: Time
+      #   run: sleep 1000
+
         #working-directory: ./oct-31
       - name: Run Terraform Destroy
         run: terraform destroy -auto-approve

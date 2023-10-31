@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 
@@ -47,11 +43,7 @@ resource "aws_route_table_association" "a" {
   route_table_id = aws_route_table.rt.id
 }
 
-module "security_groups" {
-  source          = "./modules/security_groups"
-  security_groups = var.security_groups
-  vpc_id          = aws_vpc.main.id
-}
+
 
 resource "aws_instance" "main" {
   ami           = "ami-0df435f331839b2d6"
@@ -75,6 +67,3 @@ resource "aws_instance" "main" {
   }
 }
 
-output "security_group_id" {
-  value = module.security_groups.security_group_id
-}
