@@ -14,24 +14,17 @@ jobs:
   terraform:
     defaults:
       run:
-        working-directory: ./oct-31
+        working-directory: ./nov-01
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      #- uses: hashicorp/setup-terraform@v2
+      - uses: hashicorp/setup-terraform@v2
+        with:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - name: Run Terraform Init
         run: terraform init
-        #working-directory: ./oct-31
-      - name: Run Terraform Plan - BamBam
+      - name: Run Terraform Plan
         run: terraform plan
-      #  run: terraform plan -var-file myvarfile.tfvars 
-        #working-directory: ./oct-31
-      # - name: Run Terraform Apply
-      #   run: terraform apply -auto-approve
-      
-      # - name: Time
-      #   run: sleep 1000
-
-        #working-directory: ./oct-31
-      # - name: Run Terraform Destroy
-      #   run: terraform destroy -auto-approve
+      - name: Run Terraform Apply
+        run: terraform apply -auto-approve
+        if: github.event_name == 'workflow_dispatch'
